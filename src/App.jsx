@@ -103,6 +103,12 @@ function App() {
   const [ volumeRange, setVolumeRange ] = useState(0.5)
   const [ volumeimg, setVolumeimg ] = useState("./mid.png")
 
+
+  useEffect(() => {
+  const img = new Image();
+  img.src = songs[index].image;
+}, [index]);
+
   useEffect(() => {
   
     const updateTimer = () => {
