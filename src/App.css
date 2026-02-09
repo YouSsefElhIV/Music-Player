@@ -1,0 +1,131 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh);
+  padding: 0px;
+  margin: 0px;
+  background-color: black;
+
+}
+
+.wrapper{
+  background: url("./test.png");
+  background-color: rgb(40, 49, 58);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 30vh;
+  width: 25vw;
+  min-height: 500px;
+  min-width: 350px;
+  border-radius: 25px;
+  animation: wrapper-animation 20s linear infinite;
+  overflow: hidden;
+}
+
+.data-div{
+  flex: 3;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  border-radius: 15px;
+  backdrop-filter: blur(3px);
+  position: relative;
+}
+
+.song-singer-name{
+  color: white;
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.song-name{
+  font-size: clamp(10px, 20px, 35px);
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.singer-name{
+  font-size: clamp(8px, 15px, 25px);
+  margin-top: 0px;
+}
+
+.icon-div{
+  flex: 3;
+}
+
+.controls-div{
+  flex: 1;
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.im{
+  height: clamp(100px, 140px, 290px);
+  border-radius: 50px;
+}
+
+@keyframes wrapper-animation {
+  0%   { box-shadow: 0px 0px 25px 5px rgba(255, 0, 0, 0.8); }
+  20%  { box-shadow: 0px 0px 25px 5px rgba(255, 165, 0, 0.8); } 
+  40%  { box-shadow: 0px 0px 25px 5px rgba(255, 255, 0, 0.8); } 
+  60%  { box-shadow: 0px 0px 25px 5px rgba(4, 128, 4, 0.8); }
+  80%  { box-shadow: 0px 0px 25px 5px rgba(0, 0, 255, 0.8); }
+  100% { box-shadow: 0px 0px 25px 5px rgba(128, 0, 128, 0.8); }
+}
+
+.prev-btn, .pause-btn, .next-btn{
+  background: transparent;
+  border: none;
+}
+
+.play-icon{
+  height: 49px;
+  border-radius: 20px;
+
+}
+
+.bar{
+  position:relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  backdrop-filter: blur(3px);
+}
+
+.song-dur{
+  width: 70%;
+}
+
+.timer{
+  position: absolute;
+  left: 10px;
+}
+
+.duration{
+  position: absolute;
+  right: 10px;
+}
+
+.volume-bar{
+  position: absolute;
+  right: 10px;
+  writing-mode:sideways-lr;
+}
+
+.volume-icon{
+  height: 25px;
+  position: absolute;
+  right: 5px;
+  top: 42%;
+}
