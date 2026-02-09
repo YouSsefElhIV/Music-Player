@@ -7,7 +7,7 @@ import song2img from './assets/images/song2.png'
 import song3img from './assets/images/song3.png'
 import './App.css'
 
-async function prevSong(index, setIndex, songs, file, setPlay, setX, setSongtimer, loading, isLoading){
+async function prevSong(index, setIndex, songs, file, setPlay, setX, setSongtimer, loading, setLoading){
   if (loading === true)
       return ;
   setLoading(true)
@@ -57,7 +57,7 @@ async function pauseSong(x, setX, file, setPlay, songtimer){
   }
 }
 
-async function nextSong(index, setIndex, songs, file, setPlay, setX, setSongtimer, loading, isLoading){
+async function nextSong(index, setIndex, songs, file, setPlay, setX, setSongtimer, loading, setLoading){
   if (loading === true)
       return ;
   setLoading(true)
@@ -177,13 +177,13 @@ function App() {
           <span className='duration'>{(songs[index].duration)}</span>
         </div>
         <div className='controls-div'>
-          <button className='prev-btn' onClick={() => prevSong(index, setIndex, songs,  song.current, setPlay, setX, setSongtimer, loading, isLoading)}>
+          <button className='prev-btn' onClick={() => prevSong(index, setIndex, songs,  song.current, setPlay, setX, setSongtimer, loading, setLoading)}>
             <img className='play-icon' src='./prev.png'></img>
           </button>
           <button className='pause-btn' onClick={() => pauseSong(x, setX, song.current, setPlay, songtimer)} >
             <img className='play-icon' src={play}></img>
           </button>
-          <button className='next-btn' onClick={() => nextSong(index, setIndex, songs, song.current, setPlay, setX, setSongtimer, loading, isLoading)} >
+          <button className='next-btn' onClick={() => nextSong(index, setIndex, songs, song.current, setPlay, setX, setSongtimer, loading, setLoading)} >
             <img className='play-icon' src='./next.png'></img>
           </button>
         </div>
