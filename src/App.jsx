@@ -2,6 +2,9 @@ import { useState, useRef, useEffect } from 'react'
 import song1file from './assets/songs/song1.mp3'
 import song2file from './assets/songs/song2.mp3'
 import song3file from './assets/songs/song3.mp3'
+import song1img from './assets/images/song1.png'
+import song2img from './assets/images/song2.png'
+import song3img from './assets/images/song3.png'
 import './App.css'
 
 async function prevSong(index, setIndex, songs, file, setPlay, setX, setSongtimer){
@@ -75,21 +78,21 @@ function App() {
       singer: "ياسر الدوسري",
       song: song1file,
       duration: "25.01",
-      image: "/src/assets/images/song1.png"
+      image: song1img
     },
     {
       name: "سورة مريم ",
       singer: "ياسر الدوسري",
       song: song2file,
       duration: "16.25",
-      image: "/src/assets/images/song2.png"
+      image: song2img
     },
     {
       name: "سورة المؤمنون",
       singer: "ياسر الدوسري",
       song: song3file,
       duration: "21.01",
-      image: "/src/assets/images/song3.png"
+      image: song3img
     }
   ]
   const [ index, setIndex ] = useState(0)
