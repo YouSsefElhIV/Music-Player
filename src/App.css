@@ -10,7 +10,6 @@ body{
 }
 
 .wrapper{
-  background: url("../public/test.png");
   background-color: rgb(40, 49, 58);
   display: flex;
   align-items: center;
