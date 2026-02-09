@@ -5,6 +5,15 @@ import song3file from './assets/songs/song3.mp3'
 import song1img from './assets/images/song1.png'
 import song2img from './assets/images/song2.png'
 import song3img from './assets/images/song3.png'
+import pauseicon from './pause.png'
+import playicon from './play.png'
+import midicon from './mid.png'
+import muteicon from './mute.png'
+import highicon from './high.png'
+import lowicon from './low.png'
+import previcon from './prev.png'
+import nexticon from './next.png'
+
 import './App.css'
 
 async function prevSong(index, setIndex, songs, file, setPlay, setX, setSongtimer, loading, setLoading){
@@ -20,7 +29,7 @@ async function prevSong(index, setIndex, songs, file, setPlay, setX, setSongtime
   file.src = songs[prev].song
   try{
     await file.play()
-    setPlay("./pause.png")
+    setPlay(pauseicon)
     setX(1)
     setSongtimer(0)
   }
@@ -40,7 +49,7 @@ async function pauseSong(x, setX, file, setPlay, songtimer){
     {
       try{
         await file.play()
-        img = "./pause.png"
+        img = pauseicon
       }
       catch(err)
       {
@@ -50,7 +59,7 @@ async function pauseSong(x, setX, file, setPlay, songtimer){
     else
     {
       file.pause()
-      img = "./play.png"
+      img = playicon
     }
     setX(x + 1);
     setPlay(img)
@@ -70,7 +79,7 @@ async function nextSong(index, setIndex, songs, file, setPlay, setX, setSongtime
   file.src = songs[next].song
   try{
     await file.play()
-    setPlay("./pause.png")
+    setPlay(pauseicon)
     setX(1)
     setSongtimer(0)
   }
@@ -112,9 +121,9 @@ function App() {
   const song = useRef(new Audio(songs[index].song));
   const [ x, setX ] = useState(0)
   const [ songtimer, setSongtimer ] = useState(0)
-  const [ play, setPlay ] = useState('./play.png')
+  const [ play, setPlay ] = useState(playicon)
   const [ volumeRange, setVolumeRange ] = useState(0.5)
-  const [ volumeimg, setVolumeimg ] = useState("./mid.png")
+  const [ volumeimg, setVolumeimg ] = useState(midicon)
 
 
   useEffect(() => {
@@ -150,13 +159,13 @@ function App() {
               setVolumeRange(e.target.value / 100)
               song.current.volume = (e.target.value / 100).toFixed(1)
               if (e.target.value <= 0)
-                  setVolumeimg("./mute.png")
+                  setVolumeimg(muteicon)
               else if (e.target.value <= 30)
-                setVolumeimg("./low.png")
+                setVolumeimg(lowicon)
               else if (e.target.value <= 80)
-                setVolumeimg("./mid.png")
+                setVolumeimg(midicon)
               else
-                setVolumeimg("./high.png")
+                setVolumeimg(highicon)
             }
             }></input>
             <img src={volumeimg} className='volume-icon'></img>
@@ -171,20 +180,20 @@ function App() {
             setSongtimer(Number(e.target.value))
             song.current.currentTime = e.target.value * 60
             if (Number(e.target.value) >= Number(songs[index].duration))
-              setPlay("./play.png")
+              setPlay(playicon)
           }
           }/>
           <span className='duration'>{(songs[index].duration)}</span>
         </div>
         <div className='controls-div'>
           <button className='prev-btn' onClick={() => prevSong(index, setIndex, songs,  song.current, setPlay, setX, setSongtimer, loading, setLoading)}>
-            <img className='play-icon' src='./prev.png'></img>
+            <img className='play-icon' src={previcon}></img>
           </button>
           <button className='pause-btn' onClick={() => pauseSong(x, setX, song.current, setPlay, songtimer)} >
             <img className='play-icon' src={play}></img>
           </button>
           <button className='next-btn' onClick={() => nextSong(index, setIndex, songs, song.current, setPlay, setX, setSongtimer, loading, setLoading)} >
-            <img className='play-icon' src='./next.png'></img>
+            <img className='play-icon' src={nexticon}></img>
           </button>
         </div>
       </div>
