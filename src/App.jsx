@@ -5,14 +5,14 @@ import song3file from './assets/songs/song3.mp3'
 import song1img from './assets/images/song1.png'
 import song2img from './assets/images/song2.png'
 import song3img from './assets/images/song3.png'
-import pauseicon from './pause.png'
-import playicon from './play.png'
-import midicon from './mid.png'
-import muteicon from './mute.png'
-import highicon from './high.png'
-import lowicon from './low.png'
-import previcon from './prev.png'
-import nexticon from './next.png'
+import pauseicon from '/pause.png'
+import playicon from '/play.png'
+import midicon from '/mid.png'
+import muteicon from '/mute.png'
+import highicon from '/high.png'
+import lowicon from '/low.png'
+import previcon from '/prev.png'
+import nexticon from '/next.png'
 
 import './App.css'
 
@@ -87,7 +87,7 @@ async function nextSong(index, setIndex, songs, file, setPlay, setX, setSongtime
     console.log(err)
   }
   finally{
-    setLoading(fasle)
+    setLoading(false)
   }
 }
 
