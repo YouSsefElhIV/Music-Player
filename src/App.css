@@ -21,6 +21,7 @@ body{
   border-radius: 25px;
   animation: wrapper-animation 20s linear infinite;
   overflow: hidden;
+  max-width: 450px;
 }
 
 .data-div{
