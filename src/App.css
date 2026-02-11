@@ -1,3 +1,7 @@
+*{
+  select-user: none;
+}
+
 body{
   display: flex;
   justify-content: center;
@@ -128,4 +132,5 @@ body{
   position: absolute;
   right: 5px;
   top: 42%;
+  background: white;
 }
